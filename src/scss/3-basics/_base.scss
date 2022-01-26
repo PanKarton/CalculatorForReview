@@ -1,0 +1,11 @@
+@use '../1-abstracts/' as *;
+html {
+    // We inherit box-sizing from html tag
+    // Some say it is slightly better than applying it to all * elements
+    box-sizing: border-box;
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+}

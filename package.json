@@ -1,0 +1,39 @@
+{
+    "name": "layoutchallenges",
+    "version": "1.0.0",
+    "description": "This repo contains multiple copying layout challenges to train html/css(scss)/js",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm run webpack",
+        "serve": "npm run webpack serve",
+        "lint": "eslint src --ext .js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PanKarton/CopyLayoutChallenges.git"
+    },
+    "author": "PanKarton",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/PanKarton/CopyLayoutChallenges/issues"
+    },
+    "homepage": "https://github.com/PanKarton/CopyLayoutChallenges#readme",
+    "devDependencies": {
+        "css-loader": "^6.5.1",
+        "eslint": "^8.7.0",
+        "html-loader": "^3.1.0",
+        "html-webpack-plugin": "^5.5.0",
+        "mini-css-extract-plugin": "^2.4.6",
+        "prettier": "2.5.1",
+        "sass": "^1.47.0",
+        "sass-loader": "^12.4.0",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.65.0",
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.7.2"
+    },
+    "dependencies": {
+        "animate.css": "^4.1.1",
+        "normalize.css": "^8.0.1"
+    }
+}

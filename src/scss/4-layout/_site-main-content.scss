@@ -1,0 +1,71 @@
+@use '../1-abstracts/' as a;
+section {
+    @include a.fullscreen-with-centered-child;
+    background-color: var(--main-background);
+    &.blue-theme {
+        // backgrounds
+        --main-background: hsl(222, 26%, 31%);
+        --keypad-background: hsl(223, 31%, 20%);
+        --toggle-background: hsl(223, 31%, 20%);
+        --screen-background: hsl(224, 36%, 15%);
+        // keys
+        --key-background-1: hsl(225, 21%, 49%);
+        --key-shadow-1: hsl(224, 28%, 35%);
+        --key-background-2: hsl(6, 63%, 50%);
+        --key-shadow-2: hsl(6, 70%, 34%);
+        --key-background-3: hsl(30, 25%, 89%);
+        --key-shadow-3: hsl(28, 16%, 65%);
+        // text color
+        --color-1: hsl(0, 0%, 100%);
+        --color-2: hsla(0, 0%, 100%, 0.5);
+        --color-3: hsl(221, 14%, 31%);
+        --color-4: hsl(0, 0%, 100%);
+        --color-5: hsl(0, 0%, 100%);
+        // slider position
+        --slider-pos: -190;
+    }
+    &.light-theme {
+        // backgrounds
+        --main-background: hsl(0, 0%, 90%);
+        --keypad-background: hsl(0, 5%, 81%);
+        --toggle-background: hsl(0, 5%, 81%);
+        --screen-background: hsl(0, 0%, 93%);
+        // keys
+        --key-background-1: hsl(185, 42%, 37%);
+        --key-shadow-1: hsl(185, 58%, 25%);
+        --key-background-2: hsl(25, 98%, 40%);
+        --key-shadow-2: hsl(25, 99%, 27%);
+        --key-background-3: hsl(45, 7%, 89%);
+        --key-shadow-3: hsl(35, 11%, 61%);
+        // text color
+        --color-1: hsl(60, 10%, 19%);
+        --color-2: rgba(53, 53, 44, 0.5);
+        --color-3: hsl(60, 10%, 19%);
+        --color-4: hsl(0, 0%, 100%);
+        --color-5: hsl(0, 0%, 100%);
+        // slider position
+        --slider-pos: -50;
+    }
+    &.purple-theme {
+        // backgrounds
+        --main-background: hsl(268, 75%, 9%);
+        --keypad-background: hsl(268, 71%, 12%);
+        --toggle-background: hsl(268, 71%, 12%);
+        --screen-background: hsl(268, 71%, 12%);
+        // keys
+        --key-background-1: hsl(281, 89%, 26%);
+        --key-shadow-1: hsl(285, 91%, 52%);
+        --key-background-2: hsl(176, 100%, 44%);
+        --key-shadow-2: hsl(177, 92%, 70%);
+        --key-background-3: hsl(268, 47%, 21%);
+        --key-shadow-3: hsl(290, 70%, 36%);
+        // text color
+        --color-1: hsl(52, 100%, 62%);
+        --color-2: hsla(52, 100%, 64%, 0.5);
+        --color-3: hsl(52, 100%, 62%);
+        --color-4: hsl(0, 0%, 100%);
+        --color-5: hsl(198, 20%, 13%);
+        // slider position
+        --slider-pos: 90;
+    }
+}

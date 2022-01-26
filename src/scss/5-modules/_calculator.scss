@@ -1,0 +1,76 @@
+@use '../1-abstracts/' as *;
+.calculator {
+    @include flex($direction: column);
+    width: $calculator-width;
+    .header {
+        @include flex($justify: space-between, $align: flex-end);
+        width: 100%;
+        &__title {
+            @include typography($color: var(--color-1));
+            margin: 0;
+        }
+        &__theme-switcher-wrapper {
+            @include flex($align: flex-end, $gap: 1rem);
+        }
+        &__theme-word {
+            @include margin-padding-reset;
+            @include typography($size: .75rem, $color: var(--color-1), $weight: 600);
+            text-transform: uppercase;
+            padding-bottom: .375rem;
+        }
+    }
+    .screen {
+        background-color: var(--screen-background);
+        width: 100%;
+        min-height: 9.5rem;
+        border-radius: 10px;
+        padding: $window-padding;
+        text-align: right;
+        p {
+            @include margin-padding-reset;
+        }
+        &__current-operand {
+            @include typography($size: $result-fs, $color: var(--color-1));
+            word-wrap: break-word;
+        }
+        &__current-operand-wrapper {
+            margin-top: .5rem;
+        }
+        &__prev-operand {
+            @include typography($size: $math-operation-fs, $color: var(--color-2), $weight: 600);
+        }
+    }
+    .keypad {
+        @include grid-equal-col-rows($rows: 5, $cols: 4, $gap: $keys-gap);
+        width: 100%;
+        background-color: var(--keypad-background);
+        border-radius: 10px;
+        padding: $window-padding;
+        .key {
+            @include typography($size: $fs-primary, $color: var(--color-3));
+            @include key-background(var(--key-background-3), var(--key-shadow-3));
+            @include key-pushed(var(--key-background-3), var(--key-shadow-3));
+            border-radius: $key-radius;
+            border: none;
+            padding: 1rem 0;
+            line-height: 90%;
+            padding-top: 1.25rem;
+            cursor: pointer;
+            &--long {
+                grid-column: span 2;
+            }
+            &--edit {
+                @include typography($size: $key-edit-fs, $color: var(--color-4), $weight: 600);
+                text-transform: uppercase;
+                @include key-background(var(--key-background-1), var(--key-shadow-1));
+                @include key-pushed(var(--key-background-1), var(--key-shadow-1));
+            }
+            &--result {
+                @include key-background(var(--key-background-2), var(--key-shadow-2));
+                @include key-pushed(var(--key-background-2), var(--key-shadow-2));
+                color: var(--color-5);
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+// calculator
+$calculator-width: clamp(20.5rem, 80vw, 34rem);
+$ff-primary: 'Spartan',
+sans-serif;
+$fs-primary: clamp(1.75rem, 5vw, 2rem);
+// windows spacing aroung elements
+$window-padding: clamp(1.25rem, 4vw, 2rem);
+$keys-gap: clamp(.875rem, 3vw, 1.75rem);
+// font sizes
+$result-fs: clamp(2.5rem, 8vw, 3rem);
+$math-operation-fs: clamp(1.1rem, 4vw, 1.25rem);
+$key-edit-fs: clamp(1.125rem, 5vw, 1.5rem);
+// key border radius
+$key-radius: clamp(.25rem, 1vw, .75rem);

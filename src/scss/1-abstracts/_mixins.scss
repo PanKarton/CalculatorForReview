@@ -1,0 +1,52 @@
+@use './variables' as v;
+@mixin fullscreen-with-centered-child {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 1.5rem) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin grid-equal-col-rows($rows, $cols, $gap: 0) {
+    display: grid;
+    grid-template-rows: repeat($rows, 1fr);
+    grid-template-columns: repeat($cols, 1fr);
+    gap: $gap;
+}
+
+@mixin typography($family: v.$ff-primary, $size: v.$fs-primary, $color: white, $weight: 700) {
+    font-family: $family;
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+}
+
+@mixin margin-padding-reset {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin circle($diagonal) {
+    width: $diagonal;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+@mixin key-background($bg, $shadow) {
+    background-color: $bg;
+    box-shadow: 0px 4px 0px 0px $shadow;
+}
+
+@mixin key-pushed($bg, $shadow) {
+    &.active {
+        box-shadow: 0 -4px 0px 0px $bg;
+        background-color: $shadow;
+    }
+}

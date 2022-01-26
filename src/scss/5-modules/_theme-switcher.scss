@@ -1,0 +1,42 @@
+@use '../1-abstracts/' as *;
+.theme-switcher {
+    @include flex($direction: column, $gap: .25rem);
+    padding-bottom: .25rem;
+    &__numbers {
+        @include margin-padding-reset;
+        @include flex($gap: .875rem);
+    }
+    &__number {
+        @include margin-padding-reset;
+        @include typography($size: .75rem, $color: var(--color-1), $weight: 600);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    &__switch-wrapper {
+        height: 1.5rem;
+        border-radius: 1000px;
+        width: 4.375rem;
+        overflow: hidden;
+    }
+    &__switch {
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+        background-color: var(--toggle-background);
+        position: relative;
+        cursor: pointer;
+        input[type="checkbox"] {
+            display: none;
+        }
+    }
+    &__slider {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(calc(var(--slider-pos) * 1%), -50%);
+        @include circle(1rem);
+        background-color: var(--key-background-2);
+        transition: transform .25s ease-in-out;
+    }
+}
