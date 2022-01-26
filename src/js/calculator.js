@@ -40,9 +40,11 @@ export default class Calculator {
 
     }
     compute = () => {
-        if (this.previousValue === `0`) return this.currentValue = `err`;
         const computation = eval(`${this.previousValue}${this.operation}${this.currentValue}`);
         this.currentValue = computation.toString();
+        if (this.currentValue === `Infinity`) {
+            this.currentValue = `err`;
+        }
     }
     updateDisplay = () => {
         // if last char is deleted, then display 0
