@@ -40,25 +40,9 @@ export default class Calculator {
 
     }
     compute = () => {
-        switch (this.operation) {
-            case `+`:
-                // current value is sum of 2 parseFloat'ed strings
-                this.currentValue = parseFloat(this.previousValue) + parseFloat(this.currentValue);
-                break;
-            case `-`:
-                this.currentValue = parseFloat(this.previousValue) - parseFloat(this.currentValue);
-                break;
-            case `*`:
-                this.currentValue = parseFloat(this.previousValue) * parseFloat(this.currentValue);
-                break;
-            case `/`:
-                if (this.previousValue === `0`) return this.currentValue = `err`;
-                this.currentValue = parseFloat(this.previousValue) / parseFloat(this.currentValue);
-                break;
-            default:
-                break;
-        }
-        this.currentValue = this.currentValue.toString();
+        if (this.previousValue === `0`) return this.currentValue = `err`;
+        const computation = eval(`${this.previousValue}${this.operation}${this.currentValue}`);
+        this.currentValue = computation.toString();
     }
     updateDisplay = () => {
         // if last char is deleted, then display 0
