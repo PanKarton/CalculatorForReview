@@ -36,7 +36,8 @@ export default class Calculator {
         if (this.currentOperandDisplay.textContent === `-`) return;
         // first clicked minus adds - as first char and makes number negative in eval()
         if (this.currentValue === `0`) {
-            return operation === `-` ? this.currentValue = operation : ``;
+            operation === `-` ? this.currentValue = operation : ``;
+            return;
 
         }
         // change to 0 if user inserts sth like 0.0000 or 0.
@@ -71,7 +72,7 @@ export default class Calculator {
         this.currentOperandDisplay.textContent = this.currentValue;
     }
     showResult = () => {
-        // if (this.opeartion === undefined) return;
+        if (this.operation === undefined) return;
         this.compute();
         this.previousValue = ``;
         this.operation = undefined;

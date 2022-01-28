@@ -1,1 +1,1 @@
-# Please end my suffering
+# Please end my pain
